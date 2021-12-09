@@ -1,7 +1,7 @@
 
 
 .form {
-    width: 600px;
+    width: 720px;
     height: 560px;
     display: flex;
     border-radius: 20px;
@@ -10,7 +10,7 @@
 }
 
 .right {
-    width: 600px;
+    width: 720px;
     height: 560px;
 }
 
