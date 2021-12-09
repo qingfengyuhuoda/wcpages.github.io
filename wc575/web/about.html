@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 		
 		<title>关于我们</title>
+		<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 		<audio src="../image/audio/Euphoria.mp3"  id="aud" autoplay="autoplay" controls="controls" hidden="true" loop="true" preload="auto"></audio>
 
 		<!-- Loading third party fonts -->
@@ -223,44 +224,38 @@
 			</footer>
 		</div>
 		<!-- Default snippet for navigation -->
-		<script type="text/javascript"> 
-var a_idx = 0; 
-jQuery(document).ready(function($) { 
-    $("body").click(function(e) { 
-        var a = new Array("清风与豁达","星际穿越","少年Pi","肖申克","盗梦空间","大话西游","让子弹飞","千与千寻","触不可及","漫游","黑客帝国","钢琴师"); 
-        var $i = $("<span></span>").text(a[a_idx]); 
-        a_idx = (a_idx + 1) % a.length; 
-        var x = e.pageX, 
-        y = e.pageY; 
-        $i.css({ 
-            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999, 
-            "top": y - 20, 
-            "left": x, 
-            "position": "absolute", 
-            "font-weight": "bold", 
-            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")" 
-        }); 
-        $("body").append($i); 
-        $i.animate({ 
-            "top": y - 180, 
-            "opacity": 0 
-        }, 
-        1500, 
-        function() { 
-            $i.remove(); 
-        }); 
-    }); 
-}); 
-</script>
-<script>
-
-function changChick(target){
-　　$.each($(".changChick"), function() {
-　　　　$(this).removeClass("bg-light-blue");
-　　});
-　　$(target).addClass("bg-light-blue");
-}
-
+		<script>
+/* 鼠标点击文字特效 */
+    var f_idx = 0;
+	var c_idx = 0;
+    jQuery(document).ready(function($) {
+        $("body").click(function(e) {
+            var font = new Array("清风与豁达","星际穿越","少年派","肖申克","大话西游","千与千寻","触不可及","太空漫游","钢琴师");
+			var color = new Array('#ff0000','#eb4310','#f6941d','#fbb417','#ffff00','#cdd541','#99cc33','#3f9337','#219167','#239676','#24998d','#1f9baa','#0080ff','#3366cc','#333399','#003366','#800080','#a1488e','#c71585','#bd2158');
+            var $i = $("<span />").text(font[f_idx]);
+            f_idx = (f_idx + 1) % font.length;
+			c_idx = (c_idx + 1) % color.length;
+            var x = e.pageX,
+                y = e.pageY;
+            $i.css({
+                "z-index": 99999999999999999999999999999999999999999999999999999999999999999999999999 ,
+                "top": y - 20,
+                "left": x,
+                "position": "absolute",
+                "font-weight": "bold",
+                "color": color[c_idx]
+            });
+            $("body").append($i);
+            $i.animate({
+                    "top": y - 180,
+                    "opacity": 0
+                },
+                1500,
+                function() {
+                    $i.remove();
+                });
+        });
+    });
 </script>
 
 
