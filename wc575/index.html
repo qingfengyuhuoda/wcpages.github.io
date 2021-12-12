@@ -286,10 +286,33 @@
 </script>
 
 <script language="JavaScript">
-<!-- locate = 0; function scroller()
-{ if (locate !=500 ) { locate++; scroll(0,locate); clearTimeout(timer); var timer = setTimeout("scroller()",3); timer; } } // -->
+<!--
+if (window.Event)
+document.captureEvents(Event.MOUSEUP);
+function nocontextmenu()
+{
+event.cancelBubble = true
+event.returnValue = false;
+return false;
+}
+function norightclick(e)
+{if (window.Event)
+{
+if (e.which == 2 || e.which == 3)
+return false;
+}
+else
+if (event.button == 2 || event.button == 3)
+{
+event.cancelBubble = true
+event.returnValue = false;
+return false;
+}
+}
+document.oncontextmenu = nocontextmenu; // for IE5+
+document.onmousedown = norightclick; // for all others
+//-->
 </script>
-<SCRIPT language=javascript> function click() {if (event.button==2) {alert('不能查看！');}}document.οnmοusedοwn=click </SCRIPT>
 		<script src="image/js/jquery-1.11.1.min.js"></script>
 		<script src="image/js/plugins.js"></script>
 		<script src="image/js/app.js"></script>
